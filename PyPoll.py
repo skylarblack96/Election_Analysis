@@ -10,18 +10,14 @@ import os
 
 # Assign a variable to load a file from the path
 file_to_load = os.path.join("Resources", "election_results.csv")
-
 # Assign a variable to save the file to a path
 file_to_save = os.path.join("analysis", "election_analysis.txt")
-
 # Initialize a total vote counter
 total_votes = 0
-
 # Candidate options and candidate votes
 candidate_options = []
 # Declare the empty dictionary
 candidate_votes = {}
-
 # Winning Candidate and Winning Count Tracker
 winning_candidate = " "
 winning_count = 0
@@ -50,16 +46,15 @@ with open(file_to_load) as election_data:
 
 # Save the results to our text file
 with open(file_to_save, "w") as txt_file:
-    election_results = (
-        f"Election Results\n"
+    election_results = (f"Election Results\n"
         f"-------------------------\n"
         f"Total Votes: {total_votes:,}\n"
         f"-------------------------\n")
-    print(election_results, end="")
+    print(election_results, end ="")
     # Save the final vote count to the text file
     txt_file.write(election_results)
     # Determine the percentage of votes for each candidate by looping through the counts.
-    # 1. Iterate through the candidate list.
+    # Iterate through the candidate list.
     for candidate_name in candidate_votes:
         # Retrieve vote count of a candidate.
         votes = candidate_votes[candidate_name]
